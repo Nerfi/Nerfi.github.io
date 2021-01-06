@@ -19,6 +19,7 @@
 :root{
     --body-font: 'Montserrat', sans-serif;
     --big-font-size: 6.25rem;
+    --header-font-size: 6rem;
     --h2-font-size: 1.25rem;
     --normal-font-size: .938rem;
     --small-font-size: .813rem;
@@ -62,6 +63,7 @@ body{
 }
 h1,h2,p{
     margin: 0;
+    font-family: sans-serif;
 }
 ul{
     margin: 0px;
@@ -190,7 +192,7 @@ img{
 }
 .home__title{
     align-self: flex-end;
-    font-size: var(--big-font-size);
+    font-size: var(--header-font-size);
     color: var(--white-color);
     line-height: .8;
 }
@@ -225,12 +227,13 @@ img{
     padding-top: 1rem;
     width: 120px;
     height: 120px;
-    background-color: var(--first-color);
+    /*background-color: var(--first-color); */
     border-radius: 50%;
     overflow: hidden;
 }
 .about__img img{
     width: 100px;
+    object-fit: contain;
 }
 .about__subtitle{
     font-size: var(--h2-font-size);
@@ -379,6 +382,7 @@ img{
     color: var(--first-color);
 }
 
+
 /* ===== MEDIA QUERIES =====*/
 @media screen and (min-width: 768px){
     body{
@@ -464,6 +468,12 @@ img{
         grid-template-columns: repeat(3, 1fr);
         justify-items: center;
     }
+
+    .copyright{
+      text-align: center;
+      margin-right: -43rem;
+    }
+
 }
 
 @media screen and (min-width: 1024px){
