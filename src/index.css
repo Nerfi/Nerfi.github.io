@@ -385,6 +385,7 @@ img{
 
 /* ===== MEDIA QUERIES =====*/
 @media screen and (min-width: 768px){
+
     body{
         margin: 0;
     }
@@ -445,6 +446,7 @@ img{
         width: 165px;
     }
 
+
     .skills__container{
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
@@ -475,6 +477,7 @@ img{
     }
 
 }
+
 
 @media screen and (min-width: 1024px){
     .bd-grid{
