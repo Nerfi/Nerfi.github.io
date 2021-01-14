@@ -400,9 +400,9 @@ img{
         top: 3rem;
     }
 
-    .nav{
+   /* .nav{
         height: calc(var(--header-height) + 1rem);
-    }
+    } */
     .nav__list{
         display: flex;
     }
