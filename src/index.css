@@ -20,7 +20,7 @@
     --body-font: 'Montserrat', sans-serif;
     --big-font-size: 6.25rem;
     --header-font-size: 6rem;
-    --h2-font-size: 1.25rem;
+    --h2-font-size: 1.45rem;
     --normal-font-size: .938rem;
     --small-font-size: .813rem;
 }
@@ -216,6 +216,8 @@ img{
     right: 0;
     bottom: 0;
     width: 295px;
+    transform: rotate(180deg);
+
 }
 
 /* ===== ABOUT =====*/
@@ -224,17 +226,10 @@ img{
     row-gap: 2rem;
     text-align: center;
 }
-.about__img{
-    display: flex;
-    justify-content: center;
-    padding-top: 1rem;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    overflow: hidden;
-}
+
 .about__img img{
-    width: 100px;
+    width: 230px;
+
     object-fit: contain;
 }
 .about__subtitle{
@@ -244,13 +239,14 @@ img{
 }
 .about__text{
     margin-bottom: var(--mb-4);
+    font-size: 1.8rem;
 }
 .about__profession{
     display: block;
     margin-bottom: var(--mb-4);
 }
 .about__social-icon{
-    font-size: 1.4rem;
+    font-size: 2.3rem;
     margin: 0 var(--mb-1);
 }
 .about__social-icon:hover{
@@ -319,6 +315,7 @@ img{
 }
 .portfolio__link-name{
     color: var(--dark-color);
+    font-size: 22px;
 
 }
 
@@ -387,10 +384,21 @@ img{
     color: var(--first-color);
 }
 
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+@media  (max-width:480px) {
+ .portfolio__img .portfolio__link{
+    bottom: 0;
+ }
 
-@media (max-width:480px) {
+ .home__container > h1{
+    color: var(--white-color);
+    margin-top: -75px;
 
-.portfolio__link{
+
+  }
+
+
+  .portfolio__link{
     position: absolute;
     bottom: -100%;
     width: 100%;
@@ -412,21 +420,7 @@ img{
 .portfolio__link-name{
     color: var(--dark-color);
 
-}
-}
-
-/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-@media  (max-width:480px) {
- .portfolio__img .portfolio__link{
-    bottom: 0;
  }
-
- .home__container > h1{
-    color: var(--white-color);
-    margin-top: -75px;
-
-
-  }
 }
 
 
@@ -475,10 +469,12 @@ img{
         grid-template-rows: 1.7fr 1fr;
         row-gap: 0;
     }
+
     .home__img{
         width: 524px;
         right: 10%;
     }
+
 
     .about__container{
         grid-template-columns: repeat(2, 1fr);
@@ -490,6 +486,7 @@ img{
         width: 200px;
         height: 200px;
     }
+
     .about__img img{
         width: 165px;
     }
