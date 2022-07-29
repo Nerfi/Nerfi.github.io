@@ -1,60 +1,70 @@
+/*===== SELECTORS =====*/
+const footerDate = document.querySelector(".copyright__date");
+
 /*===== MENU SHOW =====*/
 const showMenu = (toggleId, navId) => {
+  const toggle = document.getElementById(toggleId);
+  nav = document.getElementById(navId);
 
-    const toggle = document.getElementById(toggleId);
-     nav = document.getElementById(navId);
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+  }
+};
 
-    if(toggle && nav){
-        toggle.addEventListener('click', ()=>{
-            nav.classList.toggle('show')
-        })
-    }
-}
-
-showMenu('nav-toggle','nav-menu');
+showMenu("nav-toggle", "nav-menu");
 
 /*===== REMOVE MENU MOBILE =====*/
-const navLink = document.querySelectorAll('.nav__link')
+const navLink = document.querySelectorAll(".nav__link");
 
-function linkAction(){
-    const navMenu = document.getElementById('nav-menu')
-    navMenu.classList.remove('show')
+function linkAction() {
+  const navMenu = document.getElementById("nav-menu");
+  navMenu.classList.remove("show");
 }
-navLink.forEach(n => n.addEventListener('click', linkAction))
-
+navLink.forEach((n) => n.addEventListener("click", linkAction));
 
 /*===== SCROLL SECTIONS ACTIVE LINK =====*/
 
-const sections = document.querySelectorAll('section[id]');
-window.addEventListener('scroll', scrollActive)
+const sections = document.querySelectorAll("section[id]");
+window.addEventListener("scroll", scrollActive);
 
-function scrollActive(){
+function scrollActive() {
+  const scrollY = window.pageYOffset;
 
-    const scrollY = window.pageYOffset
+  sections.forEach((current) => {
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = current.offsetTop - 50;
+    sectionId = current.getAttribute("id");
 
-    sections.forEach(current =>{
-        const sectionHeight = current.offsetHeight
-        const sectionTop = current.offsetTop - 50;
-        sectionId = current.getAttribute('id')
-
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active')
-        }else{
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active')
-        }
-    })
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      document
+        .querySelector(".nav__menu a[href*=" + sectionId + "]")
+        .classList.add("active");
+    } else {
+      document
+        .querySelector(".nav__menu a[href*=" + sectionId + "]")
+        .classList.remove("active");
+    }
+  });
 }
-
 
 /*===== SCROLL REVEAL ANIMATION =====*/
 const sr = ScrollReveal({
-    origin: 'top',
-    distance: '80px',
-    duration: 2000,
-    reset: true //esta propiedad va a hacer que esto se repita en bucle
-})
+  origin: "top",
+  distance: "80px",
+  duration: 2000,
+  reset: true, //esta propiedad va a hacer que esto se repita en bucle
+});
 
-sr.reveal('.home__title');
-sr.reveal('.home__scroll', {delay: 250});
-sr.reveal('.home__img', {origin:'right', delay: 400})
+sr.reveal(".home__title");
+sr.reveal(".home__scroll", { delay: 250 });
+sr.reveal(".home__img", { origin: "right", delay: 400 });
 
+/*===== DYNAMIC DATE =====*/
+function dynamicDate() {
+  const date = new Date().getFullYear();
+
+  footerDate.innerHTML = `&copy ${date} Made with love!`;
+}
+dynamicDate();
