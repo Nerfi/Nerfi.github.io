@@ -68,3 +68,27 @@ function dynamicDate() {
   footerDate.innerHTML = `&copy ${date} Made with love!`;
 }
 dynamicDate();
+
+/*===== INTERSECTION OBSERVER =====*/
+
+let options = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.2,
+};
+
+//observer
+//pd: callback is not defined
+let observer = new IntersectionObserver(callbackObserver, options);
+//selecting elemet to observe
+const juanData = document.querySelector(".about__container");
+
+observer.observe(juanData);
+
+function callbackObserver(entries) {
+  console.log(entries[0]);
+
+  if (entries[0].isIntersecting)
+    entries[0].target.classList.add("visible-container");
+  else entries[0].target.classList.remove("visible-container");
+}
