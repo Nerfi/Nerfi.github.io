@@ -130,6 +130,7 @@ img{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-weight: 700;
 }
 @media screen and (max-width: 768px){
     .nav__menu{
@@ -214,10 +215,15 @@ img{
 .home__img{
     position: absolute;
     right: 0;
-    bottom: 0;
-    width: 295px;
+    bottom: 16px;
 
 }
+
+.home img {
+    width: 410px;
+    min-width: 380px;
+}
+
 
 /* ===== ABOUT =====*/
 .about__container{
@@ -271,8 +277,10 @@ img{
 }
 .skills__name:hover{
     background-color: var(--first-color);
-    color: var(--white-color);
+    color: var(--white-color);   
+    transform: scale(1.4);
 }
+
 .skills__img img{
     border-radius: .5rem;
 }
@@ -421,7 +429,7 @@ img{
 
  }
 }
-.about__container {
+.about__container, .skills__container, .portfolio__container {
     transform: translateY(100px);
     transition: opacity 1s ease, transform 1s ease;
 }
@@ -430,6 +438,7 @@ img{
     opacity: 1;
     transform: translateX(0);
 }
+
 
 
 /* ===== MEDIA QUERIES =====*/

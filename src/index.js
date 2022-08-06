@@ -78,7 +78,6 @@ let options = {
 };
 
 //observer
-//pd: callback is not defined
 let observer = new IntersectionObserver(callbackObserver, options);
 //selecting elemet to observe
 const juanData = document.querySelector(".about__container");
@@ -86,9 +85,20 @@ const juanData = document.querySelector(".about__container");
 observer.observe(juanData);
 
 function callbackObserver(entries) {
-  console.log(entries[0]);
-
   if (entries[0].isIntersecting)
     entries[0].target.classList.add("visible-container");
   else entries[0].target.classList.remove("visible-container");
 }
+
+//skills section observe
+const skillsContainer = document.querySelector(".skills__container");
+let skillsObserver = new IntersectionObserver(callbackObserver, options);
+skillsObserver.observe(skillsContainer);
+//
+
+//portofolio section observer
+const portofolioContainer = document.querySelector(".portfolio__container");
+const portofolioObserver = new IntersectionObserver(callbackObserver, options);
+portofolioObserver.observe(portofolioContainer);
+
+//
