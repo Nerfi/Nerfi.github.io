@@ -63,11 +63,15 @@ body {
   color: var(--text-color);
   line-height: 1.6;
 }
-h1,
+
 h2,
 p {
   margin: 0;
   font-family: sans-serif;
+}
+
+h1 {
+    margin-top: 300px;
 }
 ul {
   margin: 0px;
@@ -227,9 +231,9 @@ img {
 .home__title > .home__name {
   letter-spacing: 8px;
   cursor: pointer;
-}
+} 
 
-.home__title > .home__name::after {
+ .home__title > .home__name::after {
   content: "Juan";
   position: absolute;
   color: transparent;
@@ -275,7 +279,7 @@ img {
 .home__surname:hover::after {
   top: 80px;
   left: 10px;
-}
+} 
 /* ===== ABOUT =====*/
 .about__container {
   justify-items: center;
