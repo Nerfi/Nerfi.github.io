@@ -13,7 +13,7 @@
   --white-color: #fafaff;
   --dark-color: #2a3b47;
   --text-color: #697477;
-  --segmento-color: #100F0F;
+  --segmento-color: #100f0f;
 }
 
 /*===== Fuente y tipografia =====*/
@@ -24,6 +24,7 @@
   --h2-font-size: 1.45rem;
   --normal-font-size: 0.938rem;
   --small-font-size: 0.813rem;
+  --mobile-h2-font-size: 5.7rem;
 }
 @media screen and (min-width: 768px) {
   :root {
@@ -608,6 +609,28 @@ img {
     text-align: center;
     margin-right: -43rem;
   }
+}
+
+
+@media only screen and (max-width: 810px) {
+  body {
+    background-color: lightblue;
+  }
+  /* add styles for mobile home screen view */
+
+  /* 
+  1- select element to change
+  2- change element as minimun as necessary
+  3-test
+  4-refactor 
+  */
+
+  .home__title {
+    position:  relative;
+    bottom: 80px;
+    font-size: var(--mobile-h2-font-size)
+  }
+
 }
 
 @media screen and (min-width: 1024px) {
