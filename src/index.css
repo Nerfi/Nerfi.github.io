@@ -24,7 +24,7 @@
   --h2-font-size: 1.45rem;
   --normal-font-size: 0.938rem;
   --small-font-size: 0.813rem;
-  --mobile-h2-font-size: 5.7rem;
+  --home-title-mobile-font-size: 5.7rem;
 }
 @media screen and (min-width: 768px) {
   :root {
@@ -208,8 +208,7 @@ img {
   -moz-transform: skewY(-30deg);
   -o-transform: skewY(-30deg);
   -webkit-transform: skewY(-30deg);
-  -ms-transform: skewY(-30deg);
-  transform: skewY(-30deg);
+  -ms-transform: skewY(-30deg); 
 }
 
 .home__container {
@@ -240,14 +239,16 @@ img {
   color: var(--white-color);
 }
 
-.home__proffesion-title {
+.home__proffesion {
   z-index: 2;
+  color: var(--white-color);
 }
 
 .home__img {
   position: absolute;
   right: 0;
   bottom: 16px;
+  z-index: 2;
 }
 
 .home img {
@@ -611,26 +612,36 @@ img {
   }
 }
 
-
 @media only screen and (max-width: 810px) {
-  body {
-    background-color: lightblue;
-  }
-  /* add styles for mobile home screen view */
-
-  /* 
-  1- select element to change
-  2- change element as minimun as necessary
-  3-test
-  4-refactor 
-  */
-
   .home__title {
-    position:  relative;
+    position: relative;
     bottom: 80px;
-    font-size: var(--mobile-h2-font-size)
+    font-size: var(--home-title-mobile-font-size);
+  }
+  .home__proffesion-title {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    position: relative;
+    bottom: 85px;
+    color: var(--first-color);
+    font-weight: 700;
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home__title {
+    position: relative;
+    top: 7.9rem;
+    font-size: 5rem;
+  }
+  .home__proffesion .home__proffesion-title {
+    top: -8rem;
   }
 
+  .home__scroll {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 1024px) {
