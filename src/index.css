@@ -208,7 +208,7 @@ img {
   -moz-transform: skewY(-30deg);
   -o-transform: skewY(-30deg);
   -webkit-transform: skewY(-30deg);
-  -ms-transform: skewY(-30deg); 
+  -ms-transform: skewY(-30deg);
 }
 
 .home__container {
@@ -309,6 +309,17 @@ img {
   left: 10px;
 }
 /* ===== ABOUT =====*/
+
+.about {
+  border-bottom: 1px solid var(--dark-color);
+  background: rgb(83, 97, 255);
+  background: linear-gradient(
+    30deg,
+    rgba(83, 97, 255, 1) 42%,
+    rgba(255, 255, 255, 1) 42%
+  );
+}
+
 .about__container {
   justify-items: center;
   row-gap: 2rem;
@@ -371,6 +382,7 @@ img {
 /* ===== PORTFOLIO =====*/
 .portfolio {
   background-color: var(--white-color);
+  border-bottom: 1px solid var(--dark-color);
 }
 .portfolio__container {
   justify-items: center;
@@ -409,6 +421,15 @@ img {
 }
 
 /* ===== CONTACT =====*/
+
+.contact {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    20deg,
+    rgba(255, 255, 255, 1) 51%,
+    rgba(83, 97, 255, 1) 51%
+  );
+}
 .contact__container {
   row-gap: 2rem;
 }
@@ -419,6 +440,7 @@ img {
 .contact__text {
   display: inline-block;
   margin-bottom: var(--mb-2);
+  color: var(--white-color);
 }
 .contact__inputs {
   display: grid;
