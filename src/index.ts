@@ -3,6 +3,8 @@ const footerDate2 = document.querySelector(
   ".copyright__date"
 ) as HTMLParagraphElement;
 
+const myButton = document.getElementById("myBtn") as HTMLButtonElement;
+
 /*===== MENU SHOW =====*/
 const showMenu2 = (toggleId: string, navId: string): void => {
   const toggle = document.getElementById(toggleId) as HTMLDivElement;
@@ -127,3 +129,22 @@ const portofolioObserver: IntersectionObserver = new IntersectionObserver(
   options
 );
 portofolioObserver.observe(portofolioContainer);
+
+
+//when user scroolls down 20px from the top of the document, show the button 
+
+window.addEventListener("scroll", () => {
+   if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+    myButton.style.display = "block";
+  } else {
+    myButton.style.display = "none";
+  }
+})
+
+// When the user clicks on the button, scroll to the top of the document
+myButton.addEventListener("click", topFunction);
+
+function topFunction(): void {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}

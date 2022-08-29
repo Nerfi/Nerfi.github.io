@@ -1,5 +1,6 @@
 /*===== SELECTORS =====*/
 const footerDate2 = document.querySelector(".copyright__date");
+const myButton = document.getElementById("myBtn");
 /*===== MENU SHOW =====*/
 const showMenu2 = (toggleId, navId) => {
     const toggle = document.getElementById(toggleId);
@@ -80,3 +81,18 @@ skillsObserver.observe(skillsContainer);
 const portofolioContainer = document.querySelector(".portfolio__container");
 const portofolioObserver = new IntersectionObserver(callbackObserver, options);
 portofolioObserver.observe(portofolioContainer);
+//when user scroolls down 20px from the top of the document, show the button 
+window.addEventListener("scroll", () => {
+    if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+        myButton.style.display = "block";
+    }
+    else {
+        myButton.style.display = "none";
+    }
+});
+// When the user clicks on the button, scroll to the top of the document
+myButton.addEventListener("click", topFunction);
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
