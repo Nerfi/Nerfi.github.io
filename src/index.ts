@@ -31,27 +31,20 @@ navLink2.forEach((n) => n.addEventListener("click", linkAction2));
 
 /*===== SCROLL SECTIONS ACTIVE LINK =====*/
 
-
 const sections = document.querySelectorAll<HTMLElement>("section[id]"); //https://stackoverflow.com/questions/58773652/ts2339-property-style-does-not-exist-on-type-element
 window.addEventListener("scroll", scrollActive);
 
 function scrollActive(): void {
   const scrollY: number = window.pageYOffset;
-  const test = [...document.querySelectorAll(".nav__link")];
-  console.log(test , "test anchoro")
 
-  sections.forEach((current, index) => {
+  sections.forEach((current) => {
     const sectionHeight = current.offsetHeight;
     const sectionTop = current.offsetTop - 50;
-    const sectionId = current.getAttribute("id");
-       
-  
-
-  
+    let sectionId = current.getAttribute("id");
 
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
       document
-        .querySelector(`.nav__menu a[href*=" ${current.getAttribute("class")}  "]`) // https://stackoverflow.com/questions/55588968/type-error-object-is-possibly-null-ts2531-for-window-document
+        .querySelector(".nav__menu a[href*=" + sectionId + "]")! // https://stackoverflow.com/questions/55588968/type-error-object-is-possibly-null-ts2531-for-window-document
         .classList.add("active");
     } else {
       document
