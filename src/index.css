@@ -25,7 +25,7 @@
   --h2-font-size: 1.45rem;
   --normal-font-size: 0.938rem;
   --small-font-size: 0.813rem;
-  --home-title-mobile-font-size: 5.7rem;
+  --home-title-mobile-font-size: 5rem;
 }
 @media screen and (min-width: 768px) {
   :root {
@@ -654,9 +654,10 @@ img {
 
 @media screen and (max-width: 480px) {
   .home__title {
-    position: relative;
-    top: 7.9rem;
-    font-size: 5rem;
+    position: relative; 
+    top: 10rem;
+    font-size: 4.7rem; 
+    
   }
   .home__proffesion .home__proffesion-title {
     top: -8rem;
@@ -664,6 +665,11 @@ img {
 
   .home__scroll {
     display: none;
+  }
+
+  .home__img{
+    max-width: 250px;
+    min-width: 250px;
   }
 }
 

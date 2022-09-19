@@ -6,7 +6,7 @@ const footerDate2 = document.querySelector(
 const myButton = document.getElementById("myBtn") as HTMLButtonElement;
 
 /*===== MENU SHOW =====*/
-const showMenu2 = (toggleId: string, navId: string): void => {
+export const showMenu2 = (toggleId: string, navId: string): void => {
   const toggle = document.getElementById(toggleId) as HTMLDivElement;
   const nav = document.getElementById(navId) as HTMLDivElement;
 
@@ -21,11 +21,11 @@ showMenu2("nav-toggle", "nav-menu");
 
 /*===== REMOVE MENU MOBILE =====*/
 
-const navLink2 = document.querySelectorAll(
+export const navLink2 = document.querySelectorAll(
   ".nav__link"
 ) as NodeListOf<HTMLAnchorElement>;
 
-function linkAction2(): void {
+export function linkAction2(): void {
   const navMenu = document.getElementById("nav-menu") as HTMLDivElement;
   navMenu.classList.remove("show");
 }
@@ -70,7 +70,7 @@ sr2.reveal(".home__scroll", { delay: 250 });
 sr2.reveal(".home__img", { origin: "right", delay: 400 });
 
 /*===== DYNAMIC DATE =====*/
-function dynamicDate(): void {
+export function dynamicDate(): void {
   const date: number = new Date().getFullYear();
 
   footerDate2.innerHTML = `&copy ${date} Made with love!`;
@@ -90,7 +90,7 @@ interface Options {
 let options: Options = {
   root: null,
   rootMargin: "0px",
-  threshold: 0.2,
+  threshold: 0.1,
 };
 
 //observer
